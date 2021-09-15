@@ -1,0 +1,51 @@
+import sys
+from itertools import combinations
+
+run-hw0-stdio:
+        for line in sys.stdin:
+                out = sys.stdout
+                out.write(line + "\n")
+                out.write(line + "\n")
+                out.write(line)
+                break
+
+run-hw0-alphabet:
+        for line1 in sys.stdin:
+                cartesian = combinations(line1, 3)
+                out1 = sys.stdout
+                x = len(cartesian)
+                for chars in cartesian
+                        out.write(chars)
+                        if x != 1
+                                out.write("\n")
+                        x= x-1
+
+run-hw0-powerset:
+        for line2 in sys.stdin:
+                powerList = list(line2.split(""))
+                y = len(powerList)
+                out.write("\n")
+                for y in powerList
+                        finalList.append(powerList(combinations(powerList, y))
+                q = len(finalList)
+                for z in finalList
+                        out.write(z)
+                        if q != 1
+                                out.write("\n")
+                        q = q-1
+
+run-hw0-xml:
+        for file in sys.stdin:
+                lines = file.readlines()
+                #search for <state
+                #then search in same line for name=
+                #add all the names with spaces in between as one element to
+                #the list to be outputted
+
+                #out of the lines that start with <state
+                #also search for the one that has <initial/>
+
+                #out of the lines that start with <state
+                #also search for the one that has <final/>
+                #if there are multiple of this print it with spaces
+                #between as one element to the list
