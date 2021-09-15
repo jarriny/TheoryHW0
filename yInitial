@@ -34,18 +34,29 @@ run-hw0-powerset:
                                 out.write("\n")
                         q = q-1
 
+
+import xml.etree.ElementTree as ET
+
 run-hw0-xml:
-        for file in sys.stdin:
-                lines = file.readlines()
-                #search for <state
-                #then search in same line for name=
-                #add all the names with spaces in between as one element to
-                #the list to be outputted
-
-                #out of the lines that start with <state
-                #also search for the one that has <initial/>
-
-                #out of the lines that start with <state
-                #also search for the one that has <final/>
-                #if there are multiple of this print it with spaces
-                #between as one element to the list
+        tree = ET.parse('country_data.xml')
+        root = tree.getroot()
+        names = ""
+        initial = None
+        accept = None
+        for state in root.findall('state'):
+                name = state.get('name')
+                names.append(name)
+                
+        
+        for state in root.findall('state'):
+                initial = state.find('initial')
+                if initial != None:
+                        initialSt = state.get('name')
+                        break
+        for state in root.findall('state'):
+                accept = state.find('final')
+                if accept != None:
+                        acceptSt = state.get('name')
+        Output = names + "\n" + initial + "\n" + final
+        out3 = sys.stout
+        out.write(Output)
